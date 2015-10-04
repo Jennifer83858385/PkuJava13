@@ -1,6 +1,6 @@
 /*Author:李建锋
 *Time：10.1
-*Question：数组移位
+*Question:数组移位
 */
 public class Solution {
     public void rotate(int[] nums, int k) {

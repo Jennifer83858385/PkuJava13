@@ -1,7 +1,7 @@
 /*Author:李建锋
 *Time：10.2
 *Question：杨辉三角
-*Tips:排列组合嘛。。。。
+*Tips:利用排列组合公式即可
 */
 public class Solution {
     public List<Integer> getRow(int rowIndex) {
