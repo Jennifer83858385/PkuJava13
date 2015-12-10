@@ -14,17 +14,17 @@ public class Solution {
 		return list;
 	}
     public List<List<Integer>> fourSum(int[] nums, int target) {
-        Arrays.sort(nums);
+        Arrays.sort(nums);//排序简化搜索范围
 		List<List<Integer>> list = new LinkedList<List<Integer>>();
-		for (int i = 0; i < nums.length-3; i++) {
-			for (int j = i + 1; j < nums.length-2; j++) {
-				int begin = j + 1, end = nums.length - 1;
+		for (int i = 0; i < nums.length-3; i++) {//相比三数之和多了一层循环
+			for (int j = i + 1; j < nums.length-2; j++) {//本质上就是三数之和等于定值问题
+				int begin = j + 1, end = nums.length - 1;//从当前位置向后搜索
 				while (begin < end) {
-					if (nums[begin] + nums[end] + nums[i] + nums[j] > target) {
+					if (nums[begin] + nums[end] + nums[i] + nums[j] > target) {//偏大
 						end--;
-					} else if (nums[begin] + nums[end] + nums[i] + nums[j] < target) {
+					} else if (nums[begin] + nums[end] + nums[i] + nums[j] < target) {//偏小
 						begin++;
-					} else {
+					} else {//正合适
 						List<Integer> one = new LinkedList<Integer>();
 						one.add(nums[i]);
 						one.add(nums[j]);
@@ -38,7 +38,7 @@ public class Solution {
 
 			}
 		}
-		return removeDuplicate(list);
+		return removeDuplicate(list);//结果去重
 	
     }
 }
