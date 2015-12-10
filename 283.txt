@@ -1,0 +1,44 @@
+	
+
+	    //第一次通过交换把所有的0都移到了后面，就说明顺序都变成反得了
+	 public void moveZeroes(int[] nums) {
+	 		 int t;
+	 		 int i=0;
+	 		 int j=nums.length-1;
+	 		 while(i<j){
+	 	        if (nums[i]!=0) {
+	 				i++;
+	 			}
+	 	        else {
+	 				if (nums[j]==0) {
+	 					j--;
+	 				}
+	 				else {
+	 					t=nums[i];
+	 					nums[i]=nums[j];
+	 					nums[j]=t;
+	 					i++;
+	 					j--;
+	 				}
+	 			}
+	 	 }
+	 	    }
+	
+ public void moveZeroes(int[] nums) {
+	
+		 int i=0;
+		 int j=0;
+		 int n=nums.length-1;
+		 while(j<n){
+			 if (nums[j]!=0) {
+				nums[i]=nums[j];
+				i++;
+			}
+				j++;
+		 }
+		 while(i<n){
+			 nums[i]=0;
+			 i++;
+		 }
+
+	    }
