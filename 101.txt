@@ -1,0 +1,29 @@
+//判断一个二叉树是否对称
+	//思路1：中序遍历，并将结果写在数组中，再进行对称性判断
+	//思路二：采用递归进行判断，对每一个节点来说，进行左右判断
+public boolean isSymmetric(TreeNode root) {
+        if (root==null) {
+			return true;
+		}
+        if (root.left==null&&root.right==null) {
+			return true;
+		}
+        return(isMirror(root.left,root.right));
+    }
+	
+	public boolean isMirror(TreeNode m,TreeNode n){
+		if (m==null&&n==null) {
+			return true;
+		}
+		if (m==null&&n!=null) {
+			return false;
+		}
+		if (m!=null&&n==null) {
+			return false;
+		}
+		if (m.val!=n.val) {
+			return false;
+		}
+		return isMirror(m.left, n.right) && isMirror(m.right, n.left);  
+	}
+	
