@@ -5,7 +5,7 @@ public class Solution {
     public int maxProfit(int[] prices) {
         int lowPrice=Integer.MAX_VALUE;
         int mostPro=0;
-        for(int i:prices){
+		for(int i:prices){
             if(i<lowPrice)lowPrice=i;
             else if(i-lowPrice>mostPro)mostPro=i-lowPrice;
         }
